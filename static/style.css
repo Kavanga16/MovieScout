@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    color: #f4f1ea;
+    background: #171717;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.header {
+    padding: 48px 24px 32px;
+    text-align: center;
+    border-bottom: 1px solid #393939;
+}
+
+.header h1 {
+    margin: 0;
+    color: #f1b24a;
+    font-size: 40px;
+}
+
+.header p {
+    margin: 8px 0 0;
+    color: #b7b7b7;
+}
+
+.main {
+    width: min(900px, calc(100% - 32px));
+    margin: 32px auto;
+}
+
+.tool {
+    padding: 24px;
+    margin-bottom: 20px;
+    background: #222222;
+    border: 1px solid #393939;
+    border-radius: 6px;
+}
+
+.tool h2 {
+    margin-top: 0;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: end;
+}
+
+label {
+    display: grid;
+    gap: 6px;
+    color: #d1d1d1;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    color: #ffffff;
+    background: #151515;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    font: inherit;
+}
+
+input:focus {
+    outline: 2px solid #f1b24a;
+    border-color: transparent;
+}
+
+button, 
+.result a {
+    min-height: 42px;
+    padding: 10px 18px;
+    color: #171717;
+    background: #f1b24a;
+    border: 0;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover,
+.result a:hover {
+    background: #ffd077;
+}
+
+.message {
+    padding: 14px 16px;
+    color: #f4f1ea;
+    background: #303030;
+    border-left: 4px solid #f1b24a;
+}
+
+.result {
+    padding: 28px 0;
+    border-top: 1px solid #393939;
+}
+
+.result-label {
+    color: #e05d44;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.result h2 {
+    margin: 4px 0;
+    font-size: 32px;
+}
+
+.result a {
+    display: inline-block;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,7 @@
+.env
+movies.json
+history.json
+__pycache__/
+.pytest_cache/
+*.pyc
+

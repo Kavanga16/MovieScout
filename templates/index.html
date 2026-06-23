@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+        >
+        <title>MovieScout</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1>movieScout</h1>
+            <p>Discover movies and pick what to watch tonight.</p>
+        </header>
+
+        <main class="main">
+            <section class="tool">
+                <h2>Discover movies</h2>
+
+                <form method="post" class="form">
+                    <input type="hidden" name="action" value="scout">
+
+                    <label>
+                        Topic
+                        <input
+                            name="query"
+                            type="text"
+                            placeholder="space travel"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Results
+                        <input
+                            name="limit"
+                            type="number"
+                            value="10"
+                            min="1"
+                            max="20"
+                            required
+                        >
+                    </label>
+
+                    <button type="submit">Discover</button>
+                </form>
+            </section>
+
+            <section class="tool">
+                <h2>Pick a movie</h2>
+
+            <form method="post" class="form">
+                <input type="hidden" name="action" value="recommend">
+
+                <label>
+                    Genres
+                    <input
+                        name="tags"
+                        type="text"
+                        placeholder="sci-fi adventure"
+                    >
+                </label>
+
+                <label>
+                    Maximum runtime
+                    <input
+                        name="max_runtime"
+                        type="number"
+                        value="180"
+                        min="1"
+                        max="600"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Minimum Rating
+                    <input 
+                        name="min_rating"
+                        type="number"
+                        step="0.1"
+                        value="7"
+                        min="0"
+                        max="10"
+                        required
+                    >
+                </label>
+
+                <button type="submit">Recommend</button>
+            </form>
+            </section>
+
+
+        {% if message %}
+            <p class="message"> {{ message }}</p>
+        {% endif %}
+
+        {% if movie %}
+            <section class="result">
+                <p class="result-label">Tonight's pick</p>
+                <h2>{{ movie.title }} </h2>
+                <p>{{ movie.year }} . {{ movie.runtime }} min</p>
+                <p>IMDb rating: {{ movie.imdb_rating }}</p>
+                <p>{{ ", ".join(movie.genres) }}</p>
+
+                <a href="{{ movie.imdb_url }}" target="_blank">
+                    Open IMDb
+                </a>     
+            </section>
+        {% endif %}
+    </main>
+</body>
+</html>
+
+ 
