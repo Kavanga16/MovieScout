@@ -1,7 +1,7 @@
 import requests
 from flask import Flask, render_template, request
 
-from project import MOVIES_FILE, scout_keyword, get_best_recommendation
+from project import MOVIES_FILE, get_best_recommendation, scout_keyword
 
 app = Flask(__name__)
 

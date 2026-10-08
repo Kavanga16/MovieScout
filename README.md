@@ -1,3 +1,5 @@
+![ci](https://github.com/Kavanga16/MovieScout/actions/workflows/ci.yml/badge.svg)
+
 # MovieScout
 
 MovieScout is a Python and Flask application that helps users discover, save, and recommend movies using the OMDb and TMDb APIs with local JSON storage.

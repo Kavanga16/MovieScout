@@ -4,7 +4,6 @@ import os
 
 import requests
 
-
 MOVIES_FILE = "movies.json"
 HISTORY_FILE = "history.json"
 OMDB_URL = "http://www.omdbapi.com/"

@@ -1,5 +1,10 @@
-﻿from project import match_score, recommend_movies, load_movies, movie_exists, find_movie_by_id, parse_movie_data
-
+﻿from project import (
+    find_movie_by_id,
+    match_score,
+    movie_exists,
+    parse_movie_data,
+    recommend_movies,
+)
 
 # Tests will be written step by step while the project grows.
 # Start with pure functions first: match_score() and recommend_movies().
